@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amney COMPUTER - Services de Réparation d'Appareils Électroniques</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Neomorphic Header */
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 
+                8px 8px 16px rgba(0, 0, 0, 0.1),
+                -8px -8px 16px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                25px 25px 75px rgba(0, 0, 0, 0.15),
+                -25px -25px 75px rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 
+                8px 8px 16px rgba(0, 0, 0, 0.1),
+                -8px -8px 16px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-right: 15px;
+            width: 40px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #667eea;
+        }
+
+        /* Location Section */
+        .location-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .location-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .location-info {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                8px 8px 16px rgba(0, 0, 0, 0.2),
+                -8px -8px 16px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 
+                12px 12px 24px rgba(0, 0, 0, 0.3),
+                -12px -12px 24px rgba(255, 255, 255, 0.1);
+        }
+
+        .fab i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .company-name {
+                font-size: 2rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .fab {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header, .service-card, .contact-section, .location-section {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <img src="logo.jpg" alt="Amney COMPUTER Logo" class="logo">
+            <h1 class="company-name">Amney COMPUTER</h1>
+            <p class="tagline">Services Professionnels de Réparation d'Appareils Électroniques</p>
+        </header>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="service-card">
+                <i class="fas fa-laptop service-icon"></i>
+                <h3 class="service-title">Réparation d'Ordinateurs Portables</h3>
+                <p class="service-description">Services de réparation experts pour toutes les marques et modèles d'ordinateurs portables. Des problèmes matériels aux problèmes logiciels, nous vous couvrons.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <h3 class="service-title">Réparation de Mobiles</h3>
+                <p class="service-description">Services professionnels de réparation de smartphones et tablettes. Remplacement d'écran, remplacement de batterie et plus encore.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-desktop service-icon"></i>
+                <h3 class="service-title">Réparation d'Ordinateurs de Bureau</h3>
+                <p class="service-description">Services complets de réparation et maintenance d'ordinateurs de bureau. Mises à niveau matérielles et dépannage.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="contact-title">Contactez-Nous</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-comments contact-icon"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">WhatsApp</div>
+                        <a href="https://wa.me/213661315730" class="contact-value contact-link" target="_blank">+213 661 315 730</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">Téléphone</div>
+                        <a href="tel:+213661315730" class="contact-value contact-link">+213 661 315 730</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">Adresse</div>
+                        <div class="contact-value">C4GW+QCC Amney-computer, Khenchela 40000</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock contact-icon"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">Heures d'Ouverture</div>
+                        <div class="contact-value">Lun-Sam: 9h00 - 19h00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location-section">
+            <h3 class="location-title">Visitez Notre Magasin</h3>
+            <p class="location-info">
+                Situé au cœur de Khenchela, notre magasin propose des services professionnels de réparation d'appareils électroniques. 
+                Nous nous spécialisons dans les ordinateurs portables, smartphones, tablettes et ordinateurs de bureau. 
+                Apportez-nous votre appareil et nous le remettrons comme neuf !
+            </p>
+        </section>
+    </div>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/213661315730" class="fab" target="_blank" title="Discuter sur WhatsApp">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click effect to contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
